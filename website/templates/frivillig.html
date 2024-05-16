@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Bliv frivillig i Aalborg Rock & Metal</h1>
+<br />
+<div class="frivillig">
+{% for frivillig in frivillige %}
+<a href="{% url 'vagter' frivillig.id %}">{{ frivillig.vagter }}</a><br />
+{% endfor %}
+</div>
+{% endblock %}

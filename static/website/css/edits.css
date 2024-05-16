@@ -1,0 +1,82 @@
+body, html {
+	height: 100%;
+}
+
+body {
+	max-width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #212529;
+	color: #fff;
+	height: 100%;
+}
+
+/* NAVBAR CSS */
+
+.nav-item a:hover{
+	color: #ff0000;
+}
+
+.navbar img {
+	max-width: 150px;
+}
+
+.mb-3 img {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.text-black {
+	background-color: darkgrey;
+}
+
+.mb-3 a {
+	text-decoration: none;
+}
+
+.col-lg-5 img {
+    border-radius: 15px;
+    border: 1px darkgrey; solid
+}
+
+
+.frivillig a {
+	text-decoration: none;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Justerer elementerne til højre */
+    padding-top: 5px;
+}
+
+
+.btn {
+	color: #212529;
+}
+
+
+.btn:hover {
+	color: #ffffff;
+}
+
+
+a {
+	color: #fff;
+}
+
+
+a:hover{
+	color: #ff0000;
+}
+
+
+.float-end {
+	float: right;
+}
+
+
+.delete-btn {
+	text-transform: uppercase;
+}

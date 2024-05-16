@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Om{% endblock %}
+
+{% block content %}
+<h1>Om Aalborg Rock & Metal</h1>
+<br/>
+<div class="row">
+	<div class="col-lg-5">
+        <br><h4>Om Aalborg Rock & Metal</h4>
+        <br/>
+        <p>Aalborg Rock & Metal er en kultur/social-forening, der har til formål at udbrede undergrundsmusik, upcoming livebands og kulturliv i Aalborg og omegn. Dette bliver opnået ved at afholde kulturelle, musikalske og sociale arrangementer, hvis formål er at fremme disse kulturmiljøer. Konkret arrangerer vi 1 månedligt arrangement hele året rundt, med fokus på KONCERTER, i samarbejde med Studenterhuset, 1000Fryd og Skråen.</p>
+	</div>
+	<div class="col-lg-1"></div>
+	<div class="col-lg-6">
+        <br/>
+		<h3>Bestyrelsen</h3>
+        <!-- Section-->
+        <section>
+            <div class="container px-2 px-lg-2 mt-2">
+                <div class="row gx-2 gx-lg-2 row-cols-3 row-cols-md-3 row-cols-xl-3">
+                    {% for member in members %}
+                    <div class="col mb-3">
+                        <a href="{% url 'bestyrelse' member.id %}">
+                        <!-- Bestyrelse image-->
+                        <img class="card-img-top" src="{{ member.image.url }}" alt="..." />
+                                                <!-- Bestyrels details-->
+                        <div class="text-center text-black">
+                            <!-- Bestyrelse name-->
+                            {{ member.fornavn }}
+                            {% if member.mellemnavn %}
+                            {{ member.mellemnavn }}
+                            {% endif %}
+                            {{ member.efternavn }}
+                        </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

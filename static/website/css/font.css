@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Stencil Cargo Army';
+    src: url('../font/Stencil Cargo Army.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lobster Regular';
+    src: url('../font/Lobster-Regular.ttf') format('truetype');
+}
+
+
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+}
+
+.info-box {
+	text-transform: none;
+}
+
+.larger a {
+	font-size: 30px;
+	text-align: center !important;
+	text-decoration: underline;
+}
+
+
+h1, h2, h3{
+	font-family: 'Stencil Cargo Army';
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.bestyrelse h1 {
+	font-family: 'Lobster Regular';
+	text-align: center;
+	text-shadow: 4px 4px 1px rgba(169, 169, 169, 0.8);
+}
+
+
+.uppercase {
+	text-transform: uppercase;
+}

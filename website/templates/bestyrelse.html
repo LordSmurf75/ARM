@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<link href="{% static 'website/css/fun_fact.css' %}" rel="stylesheet" />
+
+{% block content %}
+<span class="bestyrelse">
+<h1>
+{{ bestyrelse.fornavn }}
+{% if bestyrelse.mellemnavn %}
+{{ bestyrelse.mellemnavn }}
+{% endif %}
+{{ bestyrelse.efternavn }}
+</h1>
+</span>
+<br/>
+<div class="row">
+		<div class="col-lg-1"></div>
+	<div class="col-lg-5">
+		<img src={{ bestyrelse.image.url }}>
+	</div>
+	<div class=col-lg-6>
+		<ul>
+		<li>Navn: {{ bestyrelse.fornavn }}
+				{% if bestyrelse.mellemnavn %}
+				{{ bestyrelse.mellemnavn }}
+				{% endif %}
+				{{ bestyrelse.efternavn }}</li>
+			<li>Alder: {{ bestyrelse.alder }}</li>
+			<li>Funktion: {{ bestyrelse.funktion }}</li>
+			<li>Yndlingsband DK: {{ bestyrelse.band_dk }}</li>
+			<li>Yndlingsband: {{ bestyrelse.band_int }}</li>
+			<li>Civilstatus: {{ bestyrelse.civilstatus }}</li>
+			<li>Fun fact: {{ bestyrelse.fun_fact }}</li>
+			<br/><br/><br/><br/><br/>
+			<center>
+			<a href="{% url 'about'%}" class="btn btn-secondary">Tilbage</a>
+		</center>
+	</div>
+{% endblock %}

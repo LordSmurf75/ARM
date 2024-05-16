@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Liste over bands der har spillet til AR&M koncerter</h1><br />
+    <div class="row">
+    {% for band in bands %}
+    <div class="col-lg-3">
+        {{ band }}<br />
+    </div>
+    {% endfor %}
+</div>
+<br /><br />
+<p><strong>Bands ialt:</strong> {{ bands_count }}</p>
+{% endblock %}

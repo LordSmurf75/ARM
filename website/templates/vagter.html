@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>{{ vagter.vagter }}</h1>
+<br />
+<b>Beskrivelse:</b> {{ vagter.beskrivelse}}<br />
+<br />
+<b>Opgaver:</b> {{ vagter.opgaver }}<br />
+<ul>
+<li>{{ vagter.opg_01 }}</li>
+<li>{{ vagter.opg_02 }}</li>
+<li>{{ vagter.opg_03 }}</li>
+<li>{{ vagter.opg_04 }}</li>
+{% if vagter.opg_05 %}
+<li>{{ vagter.opg_05 }}</li>
+{% endif %}
+{% if vagter.opg_06 %}
+<li>{{ vagter.opg_06 }}</li>
+{% endif %}
+{% if vagter.opg_07 %}
+<li>{{ vagter.opg_07 }}</li>
+{% endif %}
+{% if vagter.opg_08 %}
+<li>{{ vagter.opg_08 }}</li>
+{% endif %}
+{% if vagter.opg_09 %}
+<li>{{ vagter.opg_09 }}</li>
+{% endif %}
+{% if vagter.opg_10 %}
+<li>{{ vagter.opg_10 }}</li>
+{% endif %}
+{% if vagter.opg_11 %}
+<li>{{ vagter.opg_11 }}</li>
+{% endif %}
+{% if vagter.opg_12 %}
+<li>{{ vagter.opg_12 }}</li>
+{% endif %}
+</ul>
+
+
+
+
+
+{% endblock %}

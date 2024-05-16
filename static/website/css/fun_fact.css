@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'Lobster Regular';
+	src: url('../font/Lobster-Regular.ttf') format('truetype');
+}
+
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+

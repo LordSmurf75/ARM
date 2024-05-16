@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Spillede Koncerter</h1>
+  <div class="row">
+    {% for concert in spillede_koncerter %}
+   	<div class="col-1"></div>
+    <div class="col-5"><br />
+    <b>{{ concert.navn }}</b> - {{ concert.spillested }} - {{ concert.dato|date:"d/m-Y" }}<br/>
+		{{ concert.band1 }}
+		{% if concert.band2 %}
+			// {{ concert.band2 }}
+		{% endif %}
+		{% if concert.band3 %}
+			// {{ concert.band3 }}
+		{% endif %}
+		{% if concert.band4 %}
+			// {{ concert.band4 }}
+		{% endif %}
+		{% if concert.band5 %}
+			// {{ concert.band5 }}
+		{% endif %}
+		{% if concert.band6 %}
+			// {{ concert.band6 }}
+		{% endif %}
+		{% if concert.band7 %}
+			// {{ concert.band7 }}
+		{% endif %}
+		{% if concert.band8 %}
+			// {{ concert.band8 }}
+		{% endif %}
+		<br/>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

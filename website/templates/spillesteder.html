@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Spillesteder</h1><br />
+<div class="row">
+{% for spillested in spillesteder %}
+<div class="col-lg-6 col-sm-12">
+<b>{{ spillested.navn }}</b><br />
+{{ spillested.adresse }}<br />
+{{ spillested.postnr }} {{ spillested.by }}<br />
++45 {{ spillested.telefon }}<br />
+<a href="mailto:{{ spillested.email }}">Send en mail</a><br />
+<a href=" {{ spillested.hjemmeside}}" target="_blank">{{ spillested.navn }}s hjemmeside</a><br />
+<hr />
+</div>
+{% endfor %}
+</div>
+{% endblock %}

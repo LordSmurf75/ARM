@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}Forside{% endblock %}
+
+{% block content %}
+<h1>Home</h1>
+<br/>
+<div class="row">
+	<div class="col-lg-5">
+		Tom
+	</div>
+	<div class="col-lg-2"></div>
+	<div class="col-lg-5 uppercase">
+		<h2>Kommende Koncerter</h2>
+		{% for concert in concerts %}
+		{% if user.is_superuser %}
+		<b>{{ concert.dato|date:"d. F" }}</b>
+		<b><span class="float-end">{{ concert.spillested }}</b></span><br/>
+		<b>{{ concert.navn }}</b><br/>
+		{{ concert.band1 }}
+		{% if concert.band2 %}
+		// {{ concert.band2 }}
+		{% endif %}
+		{% if concert.band3 %}
+		// {{ concert.band3 }}
+		{% endif %}
+		{% if concert.band4 %}
+		// {{ concert.band4 }}
+		{% endif %}
+		{% if concert.band5 %}
+		// {{ concert.band5 }}
+		{% endif %}<br/>
+		{% if concert.offentliggjort %}
+        <div class="button-container">
+            <a href="{% url 'rediger_koncert' concert.id %}" class="btn btn-success">Rediger koncert</a>&nbsp;
+            <form action="{% url 'slet_koncert' concert.id %}" method="post" class="delete-form" style="display:inline;">
+                {% csrf_token %}
+                <button type="button" class="btn btn-danger delete-btn">Slet koncert</button>
+            </form>
+        </div>
+        {% else %}
+        <b>KONCERT IKKE OFFENTLIGGJORT</b>
+        <div class="button-container">
+            <a href="{% url 'rediger_koncert' concert.id %}" class="btn btn-success">Rediger koncert</a>&nbsp;
+            <form action="{% url 'slet_koncert' concert.id %}" method="post" class="delete-form" style="display:inline;">
+                {% csrf_token %}
+                <button type="button" class="btn btn-danger delete-btn">Slet koncert</button>
+            </form>
+        </div>
+        {% endif %}
+		<hr />		
+		{% else %}
+		{% if concert.offentliggjort %}
+		<b>{{ concert.dato|date:"d. F" }}</b>
+		<b><span class="float-end">{{ concert.spillested }}</b></span><br/>
+		<b>{{ concert.navn }}</b><br/>
+		{{ concert.band1 }}
+		{% if concert.band2 %}
+		// {{ concert.band2 }}
+		{% endif %}
+		{% if concert.band3 %}
+		// {{ concert.band3 }}
+		{% endif %}
+		{% if concert.band4 %}
+		// {{ concert.band4 }}
+		{% endif %}
+		{% if concert.band5 %}
+		// {{ concert.band5 }}
+		{% endif %}<br/>
+		<div class="button-container">
+			<a href="{{ concert.facebook }}" class="btn btn-secondary">Mere info</a>&nbsp;
+			<a href="{{ concert.billetter }}" class="btn btn-success">Køb billet</a>
+		</div>
+		<hr/>
+		{% endif %}
+		{% endif %}
+		{% endfor %}
+
+	</div>
+
+</div>
+
+<script>
+    // Vent på at siden er fuldt indlæst
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find alle sletknapper
+        var deleteButtons = document.querySelectorAll('.delete-btn');
+        
+        // Tilføj en klikhændelse til hver sletknap
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Vis en bekræftelsesdialog
+                var result = confirm('Er du sikker på, at du vil slette denne koncert?');
+                
+                // Hvis brugeren bekræfter, slet koncerten
+                if (result) {
+                    // Find det overordnede formular og udfør POST-anmodningen
+                    var form = button.closest('.delete-form');
+                    if (form) {
+                        form.submit();
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+
