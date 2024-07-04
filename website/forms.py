@@ -26,13 +26,13 @@ class KoncertForm(forms.ModelForm):
     facebook = forms.URLField(
         label="",
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Facebook URL'}),
-        required=True
+        required=False
     )
 
     billetter = forms.URLField(
         label="",
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Billet link'}),
-        required=True
+        required=False
     )
 
     band1 = forms.CharField(
